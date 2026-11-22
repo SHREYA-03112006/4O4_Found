@@ -37,6 +37,7 @@ app.include_router(org_router)
 app.include_router(org_settings_router)
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 @app.on_event("startup")
 def startup():
