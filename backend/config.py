@@ -9,7 +9,7 @@ DATABASE_URL = os.getenv(
     "DATABASE_URL",
     "sqlite:///./404_found.db" if DEV_MODE else "postgresql://postgres:postgres@localhost:5432/404_found",
 )
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+REDIS_URL = os.getenv("REDIS_URL", "")
 HF_API_TOKEN = os.getenv("HF_API_TOKEN", "")
 UPLOAD_DIR = os.getenv("UPLOAD_DIR", "uploads")
 MAX_IMAGE_SIZE = int(os.getenv("MAX_IMAGE_SIZE", "5242880"))
