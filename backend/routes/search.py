@@ -64,6 +64,7 @@ def search_items(query: SearchQuery):
         cursor=cursor,
         limit=query.limit,
         exclude_ids=exclude,
+        raw_query_text=query.text.strip() if query.text else None,
     )
 
 

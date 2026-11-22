@@ -21,6 +21,7 @@ def hybrid_search(
     cursor: str | None,
     limit: int,
     exclude_ids: list[str] | None = None,
+    raw_query_text: str | None = None,
 ) -> SearchResponse:
 
     r = get_redis()
@@ -142,8 +143,9 @@ def hybrid_search(
 
         else:
 
-            # No vector available
-            continue
+            # Fallback lexical scoring when AI vector service is tokenless or offline
+            item_desc = (item.description or item.title or "")
+            confidence = lexical_similarity(raw_query_text, item_desc)
 
         # -------------------------
         # CONFIDENCE FILTER
@@ -233,6 +235,19 @@ def hybrid_search(
 # =================================
 # COSINE SIMILARITY
 # =================================
+
+def lexical_similarity(query_text: str | None, item_text: str | None) -> float:
+    """Fallback similarity score when vector APIs are offline or tokenless."""
+    if not query_text or not item_text:
+        return 0.65
+    q_words = set(query_text.lower().split())
+    i_words = set(item_text.lower().split())
+    if not q_words or not i_words:
+        return 0.65
+    overlap = q_words.intersection(i_words)
+    score = 0.5 + 0.5 * (len(overlap) / len(q_words))
+    return min(0.98, max(0.4, round(score, 3)))
+
 
 def cosine_similarity(
     a: list[float],
