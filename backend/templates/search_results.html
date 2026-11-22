@@ -1,0 +1,50 @@
+{% for match in matches %}
+<div class="bg-white rounded-xl border border-gray-200 p-4 hover:shadow-md transition-shadow mb-3"
+     hx-get="/api/html/item/{{ match.item_id }}"
+     hx-target="#item-detail-modal"
+     hx-trigger="click">
+  <div class="flex gap-4">
+    {% if match.image_path %}
+    <img src="{{ match.image_path }}" alt="{{ match.title or 'Item' }}" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" />
+    {% endif %}
+    <div class="flex-1 min-w-0">
+      <div class="flex items-start justify-between gap-2">
+        <h3 class="font-semibold text-gray-900 truncate">{{ match.title or 'Unnamed Item' }}</h3>
+        <span class="text-xs font-medium px-2 py-0.5 rounded-full
+          {% if match.status == 'found' %}bg-green-100 text-green-700
+          {% elif match.status == 'lost' %}bg-red-100 text-red-700
+          {% else %}bg-blue-100 text-blue-700{% endif %}">
+          {{ match.status|capitalize }}
+        </span>
+      </div>
+      {% if match.description %}
+      <p class="text-sm text-gray-600 mt-1 line-clamp-2">{{ match.description }}</p>
+      {% endif %}
+      <div class="flex items-center gap-3 mt-2">
+        <span class="text-xs font-medium text-indigo-600">{{ "%.0f"|format(match.confidence * 100) }}% match</span>
+        {% if match.category %}<span class="text-xs bg-gray-100 px-2 py-0.5 rounded">{{ match.category }}</span>{% endif %}
+        {% if match.color %}<span class="text-xs bg-gray-100 px-2 py-0.5 rounded">{{ match.color }}</span>{% endif %}
+      </div>
+    </div>
+  </div>
+  {% if match.pickup_lat and match.pickup_lng %}
+  <button class="mt-3 text-xs text-indigo-600 hover:text-indigo-800 underline"
+          hx-get="/api/html/map/{{ match.item_id }}"
+          hx-target="#map-{{ match.item_id }}"
+          hx-trigger="click"
+          onclick="event.stopPropagation()">
+    📍 Show pickup point
+  </button>
+  <div id="map-{{ match.item_id }}"></div>
+  {% endif %}
+</div>
+{% endfor %}
+{% if next_cursor %}
+<div hx-get="/api/html/results-page?cursor={{ next_cursor }}"
+     hx-trigger="revealed"
+     hx-swap="afterend"
+     class="h-4"></div>
+{% endif %}
+{% if not matches %}
+<p class="text-center text-gray-400 py-8">No matches found. Try adjusting your filters or confidence threshold.</p>
+{% endif %}

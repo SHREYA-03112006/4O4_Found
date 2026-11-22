@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Python Virtual Environments & Bytecode
+venv/
+.venv/
+*/venv/
+*/.venv/
+__pycache__/
+*/__pycache__/
+*/**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*/dist/
+*.local
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local SQLite databases & logs
+*.db
+*.db-shm
+*.db-wal
+backend/404_found.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+logs/
+*.log
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

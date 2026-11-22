@@ -1,0 +1,21 @@
+{
+  "name": "campus",
+  "label": "Campus Fest / Event",
+  "colors": {
+    "primary": "#7c3aed",
+    "primaryLight": "#a855f7",
+    "secondary": "#8b5cf6",
+    "accent": "#f472b6",
+    "bg": "#faf5ff",
+    "surface": "#ffffff",
+    "text": "#1e1b4b",
+    "textMuted": "#6b7280",
+    "success": "#22c55e",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "border": "#ede9fe"
+  },
+  "fontFamily": "'Inter', system-ui, sans-serif",
+  "borderRadius": "0.75rem",
+  "mapProvider": "openstreetmap"
+}

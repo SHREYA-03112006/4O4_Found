@@ -1,0 +1,21 @@
+{
+  "name": "school",
+  "label": "School / University",
+  "colors": {
+    "primary": "#1d4ed8",
+    "primaryLight": "#3b82f6",
+    "secondary": "#6366f1",
+    "accent": "#8b5cf6",
+    "bg": "#f8fafc",
+    "surface": "#ffffff",
+    "text": "#0f172a",
+    "textMuted": "#64748b",
+    "success": "#22c55e",
+    "warning": "#f59e0b",
+    "danger": "#ef4444",
+    "border": "#e2e8f0"
+  },
+  "fontFamily": "'Inter', system-ui, sans-serif",
+  "borderRadius": "0.5rem",
+  "mapProvider": "openstreetmap"
+}

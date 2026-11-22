@@ -1,0 +1,109 @@
+{
+  "app": {
+    "name": "4O4_Found",
+    "tagline": "Lost & Found"
+  },
+  "nav": {
+    "home": "Home",
+    "team": "Team",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "mode": {
+    "iLost": "I Lost",
+    "iFound": "I Found"
+  },
+  "search": {
+    "title": "Search Matching Items",
+    "uploadImage": "Click to upload image",
+    "processing": "Processing image...",
+    "selectObject": "Select object to search:",
+    "customObject": "Or type custom object...",
+    "confirm": "Confirm",
+    "description": "Description",
+    "noResults": "No results yet",
+    "noResultsHint": "Upload an image or type a description to search",
+    "noMatches": "No matches found. Try adjusting your filters or confidence threshold.",
+    "loading": "Loading..."
+  },
+  "report": {
+    "title": "Report Found Item",
+    "itemReported": "Item Reported!",
+    "itemReportedHint": "Your found item has been saved. When someone searches for a matching lost item, they'll find it here.",
+    "reportAnother": "Report Another Item",
+    "locationFound": "Location found",
+    "messageForOwner": "Leave a message for the owner",
+    "dropLocation": "Where is the item now?",
+    "dropLocationHint": "Visible to the owner only after they pass verification",
+    "pinPickup": "Pin pickup point on map (optional)",
+    "yourContact": "Your contact (optional — visible after verification)",
+    "verificationQuestion": "Verification question",
+    "verificationAnswer": "Answer"
+  },
+  "item": {
+    "unnamed": "Unnamed Item",
+    "aiDescription": "AI Description",
+    "location": "Location",
+    "showPickup": "Show pickup point on map",
+    "claim": "Claim This Item",
+    "iFoundThis": "I Found This Item"
+  },
+  "claim": {
+    "title": "Claim Item",
+    "hint": "Leave a message and answer the verification question to prove this item is yours.",
+    "yourMessage": "Your Message",
+    "verificationAnswer": "Verification Question Answer",
+    "verificationAnswerHint": "(required to get pickup info)",
+    "submit": "Submit Claim",
+    "cancel": "Cancel",
+    "submitted": "Claim Submitted",
+    "submittedHint": "Your claim is pending verification.",
+    "passed": "Verification Passed!",
+    "recovered": "This item is now marked as Recovered.",
+    "pickupInstructions": "Pickup Instructions",
+    "dropLocation": "Drop Location",
+    "contactFinder": "Contact the Finder",
+    "done": "Done"
+  },
+  "filter": {
+    "title": "Filters",
+    "category": "Category",
+    "color": "Color",
+    "brand": "Brand",
+    "all": "All",
+    "anyBrand": "Any brand",
+    "minConfidence": "Min. Confidence"
+  },
+  "tray": {
+    "title": "My Tray",
+    "empty": "Click ☆ on a result to save it here for comparison"
+  },
+  "auth": {
+    "login": "Sign In",
+    "register": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "orgName": "Organization Name",
+    "displayName": "Display Name",
+    "signInWithGoogle": "Sign in with Google",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "registerNow": "Register now",
+    "signInInstead": "Sign in instead",
+    "emailConsent": "I consent to receive promotional content and updates about 4O4_Found services.",
+    "logoutSuccess": "Logged out successfully",
+    "invalidCredentials": "Invalid email or password",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close"
+  }
+}
